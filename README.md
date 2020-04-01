@@ -22,6 +22,7 @@
       ├─1-Init                  初始固件的代码
       ├─2-Blink                 控制板载的LED灯闪烁
       ├─3-AccessPoint-Wifi      开启Wifi接入点模式(开启热点)
+      ├─4-Connect-Wifi          开启Wifi无线终端模式(连接路由器wifi)
       ├─.gitignore              .gitignore文件
       └─README.md               README.md文件
  ```
