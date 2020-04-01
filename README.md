@@ -23,6 +23,10 @@
       ├─2-Blink                 控制板载的LED灯闪烁
       ├─3-AccessPoint-Wifi      开启Wifi接入点模式(开启热点)
       ├─4-Connect-Wifi          开启Wifi无线终端模式(连接路由器wifi)
+      ├─5-Connect-Wifi-Multi    开启Wifi无线终端模式(从多个中连接信号强的wifi)
       ├─.gitignore              .gitignore文件
       └─README.md               README.md文件
  ```
+
+ #### 提示
+     1. Arduino IDE开启串口监视器可以查看输出打印日志
