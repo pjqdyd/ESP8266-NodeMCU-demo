@@ -1,7 +1,5 @@
 /*
 NodeMCU接入点模式
-By 太极创客（http://www.taichi-maker.com）
-2019-03-11
  
 此程序用于演示如何将NodeMCU以接入点模式工作。通过此程序，您可以使用
 电脑或者手机连接NodeMCU所建立WiFi网络。
@@ -9,9 +7,6 @@ By 太极创客（http://www.taichi-maker.com）
 网络名: ESP8266-NodeMCU-PJQDYD
 密码：12345678
  
-如需获得更多关于如何使用NodeMCU开发物联网的教程和资料信息
-请参考太极创客网站（http://www.taichi-maker.com）
-并在首页搜索栏中搜索关键字：物联网
 */
  
 #include <ESP8266WiFi.h>        // 本程序使用ESP8266WiFi库
