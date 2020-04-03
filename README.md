@@ -28,15 +28,18 @@
       ├─7-WebServer-Light                 开启Web服务,监听80端口,控制板载LED的亮灭
       ├─8-WebServer-Pin-State             开启Web服务,监听80端口,查看D3引脚的状态
       ├─9-WebServer-Pin-State-AutoRefresh 开启Web服务,监听80端口,查看D3引脚的状态,自动刷新
-      ├─10-Flash-Write                    向闪存中写入文件
-      ├─11-Flash-Read                     读取闪存中的文件
+      ├─10-Flash-Write                    向闪存中写入文本文件
+      ├─11-Flash-Read                     读取闪存中的文本文件
       ├─12-Flash-Append                   向闪存文件中添加字符
       ├─13-Flash-Folder-Read              读取闪存目录
       ├─14-Flash-Remove                   删除闪存中的文件
       ├─15-Flash-Info                     获取闪存信息
+      ├─16-SPLFFS-File-Server             上传网页web文件到闪存,并作为Web服务
       ├─.gitignore                        .gitignore文件
       └─README.md                         README.md文件
  ```
 
- #### 提示
-     1. Arduino IDE开启串口监视器可以查看输出打印日志
+#### 提示
+1. Arduino IDE开启串口监视器可以查看输出打印日志.
+2. 通过Arduino IDE向ESP8266闪存中存入任意文件,需要安装[Arduino-ESP8266FS-Plugin插件](https://github.com/esp8266/arduino-esp8266fs-plugin)
+   安装插件后重启IDE,在工具>ESP8266 Sketch Data Upload会将当前打开文件的同级data文件夹上传
