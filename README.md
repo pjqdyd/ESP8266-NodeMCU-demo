@@ -27,7 +27,13 @@
       ├─6-WebServer                       开启Web服务,监听80端口
       ├─7-WebServer-Light                 开启Web服务,监听80端口,控制板载LED的亮灭
       ├─8-WebServer-Pin-State             开启Web服务,监听80端口,查看D3引脚的状态
-      ├─8-WebServer-Pin-State-AutoRefresh 开启Web服务,监听80端口,查看D3引脚的状态,自动刷新
+      ├─9-WebServer-Pin-State-AutoRefresh 开启Web服务,监听80端口,查看D3引脚的状态,自动刷新
+      ├─10-Flash-Write                    向闪存中写入文件
+      ├─11-Flash-Read                     读取闪存中的文件
+      ├─12-Flash-Append                   向闪存文件中添加字符
+      ├─13-Flash-Folder-Read              读取闪存目录
+      ├─14-Flash-Remove                   删除闪存中的文件
+      ├─15-Flash-Info                     获取闪存信息
       ├─.gitignore                        .gitignore文件
       └─README.md                         README.md文件
  ```
