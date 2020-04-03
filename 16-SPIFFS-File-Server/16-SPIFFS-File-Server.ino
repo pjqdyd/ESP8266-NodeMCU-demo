@@ -27,7 +27,7 @@ void setup() {
   Serial.begin(9600);          // 启动串口通讯
   Serial.println("");
   
-  wifiMulti.addAP("Netcore_BF2B58", "15179645842"); // 将需要连接的一系列WiFi ID和密码输入这里
+  wifiMulti.addAP("Netcore_BF2B58", "123456"); // 将需要连接的一系列WiFi ID和密码输入这里
   wifiMulti.addAP("ssid_from_AP_2", "your_password_for_AP_2"); // ESP8266-NodeMCU再启动后会扫描当前网络
   wifiMulti.addAP("ssid_from_AP_3", "your_password_for_AP_3"); // 环境查找是否有这里列出的WiFi ID。如果有
   Serial.println("Connecting ...");                            // 则尝试使用此处存储的密码进行连接。

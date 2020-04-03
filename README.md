@@ -35,6 +35,7 @@
       ├─14-Flash-Remove                   删除闪存中的文件
       ├─15-Flash-Info                     获取闪存信息
       ├─16-SPLFFS-File-Server             上传网页web文件到闪存,并作为Web服务
+      ├─17-SPLFFS-File-Server-Pin         上传网页web文件到闪存,并作为Web服务控制引脚(板载LED)
       ├─.gitignore                        .gitignore文件
       └─README.md                         README.md文件
  ```
