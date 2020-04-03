@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>太极创客-零基础入门学用物联网教程</title>
+<script src="jquery.min.js"></script>
+<script src="knob.js"></script>
+
+<script>
+    $('.dial').trigger(
+        'configure',
+        {
+            "min":0,
+            "max":100,
+            "width":150,
+    	    "fgColor":"#ffec03",
+    	    "skin":"tron",
+    	    "thickness":0.2,
+    	    "displayPrevious":true,
+            "cursor":true
+        }
+    );
+</script>
+</head>
+<body>
+<center>
+<a href="http://www.taichi-maker.com" target="_blank"><img src="/img/taichi-maker.jpg" alt="太极创客"></a>
+<h1>以下旋钮可控制ESP8266开发板LED亮度</h1>
+<input type="text" class="dial" value="75" data-displayPrevious=true data-fgColor="#00A8A9" data-thickness=.3 value="29">
+
+<script>
+    $(".dial").knob({
+        'change' : function (v) { console.log(Math.round(v,0));    
+		$.ajax({url: "/setLED?pwm="+Math.round(v,0), success: function(result){
+        		$("#div1").html(result);
+    		}});
+	}
+    });
+	
+
+</script>
+<p style="text-align: center">此页面用于演示如何通过网页控制ESP8266引脚的PWM数值。
+本教程可在太极创客网站免费获取。</p>
+<p style="text-align: center">太极创客网址： <a href="http://www.taichi-maker.com" target="_blank">www.taichi-maker.com</a></p>
+</center>
+</body>
+</html>
+

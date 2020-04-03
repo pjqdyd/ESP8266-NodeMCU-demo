@@ -38,6 +38,10 @@
       ├─17-SPIFFS-File-Server-Pin         上传网页web文件到闪存,并作为Web服务控制引脚(板载LED亮灭)
       ├─18-SPIFFS-File-Server-PWM         上传网页web文件到闪存,并通过Web页面传值控制引脚的PWM(板载LED的亮度)
       ├─19-SPIFFS-File-Server-Value       上传网页web文件到闪存,并通过Web页面传多个值到ESP8266
+      ├─20-SPIFFS-File-Server-Pin-A0      上传网页web文件到闪存,并通过Web页面Ajax控制板载LED,获取A0引脚的读数
+      ├─21-SPIFFS-File-Server-PWM-View    上传网页web文件到闪存,并通过Jquery的视图控件控制引脚的PWM(板载LED的亮度)
+      ├─22-SPIFFS-File-Server-Analog-View 上传网页web文件到闪存,并通过Jquery的仪表盘视图控件显示引脚的输入数值
+      ├─23-SPIFFS-File-Server-Web-Upload  上传网页web文件到闪存,通过前端Web页面实现上传文件到闪存
       ├─.gitignore                        .gitignore文件
       └─README.md                         README.md文件
  ```
@@ -46,3 +50,5 @@
 1. Arduino IDE开启串口监视器可以查看输出打印日志.
 2. 通过Arduino IDE向ESP8266闪存中存入任意文件,需要安装[Arduino-ESP8266FS-Plugin插件](https://github.com/esp8266/arduino-esp8266fs-plugin)
    安装插件后重启IDE,在工具>ESP8266 Sketch Data Upload会将当前打开文件的同级data文件夹上传
+
+ (参考: [太极创客文档](http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/))

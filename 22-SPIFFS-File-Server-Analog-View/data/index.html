@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<script src="\jquery.min.js"></script>
+	<script src="\d3-gauge.js"></script>
+	<link rel="stylesheet" href="\style.css">
+</head>
+<body>
+<a href="http://www.taichi-maker.com" target="_blank"><img src="/img/taichi-maker.jpg" alt="太极创客"></a>
+<h1>ESP8266模拟输入引脚读数显示示例</h1>
+<p>使用指针表的形式显示ESP8266开发板的模拟输入引脚读数数值。</p>
+<p>本教程可在太极创客网站免费获取。太极创客网址： <a href="http://www.taichi-maker.com" target="_blank">www.taichi-maker.com</a> .
+<script>
+	setInterval(function() {
+	  // Gets ADC value at every one second
+	  GetADC();
+	}, 1000);
+
+	function GetADC() {
+	  var xhttp = new XMLHttpRequest();
+          var adc=0;
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+		adc = Number(this.responseText);
+	      	gauges.forEach(function (gauge) {			
+			console.log(adc)
+	    		gauge.write(adc);
+	  		});
+	    }
+	  };
+	  xhttp.open("GET", "/getADC", false);
+	  xhttp.send();
+	}
+
+	var gauges = [];
+	var small =  {
+	    size :  100
+	  , min  :  0
+	  , max  :  50 
+	  , transitionDuration : 500
+
+	  , label                      :  'label.text'
+	  , minorTicks                 :  4
+	  , majorTicks                 :  5
+	  , needleWidthRatio           :  0.6
+	  , needleContainerRadiusRatio :  0.7
+
+	  , zones: [
+	      { clazz: 'yellow-zone', from: 0.73, to: 0.9 }
+	    , { clazz: 'red-zone', from: 0.9, to: 1.0 }
+	    ]
+	};
+
+	function createGauge (opts) {
+	  var el = document.createElement('div');
+	  el.setAttribute('class', 'gauge-container');
+	  document.body.appendChild(el);
+	  var g = d3Gauge(el, opts);
+	  g.currentValue = g._range / 2;
+	  gauges.push(g);
+	}
+
+	//createGauge({ clazz: 'simple', label:  'ESP8266' });
+	createGauge({ clazz: 'grayscale', label:  'ESP8266' });
+</script>
+
+
+</body>
+</html>
+

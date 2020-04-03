@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+	<title>太极创客-零基础入门学用物联网教程</title>
+</head>
+
+<body>
+<center>
+<a href="http://www.taichi-maker.com" target="_blank"><img src="/img/taichi-maker.jpg" alt="太极创客"></a>
+<div id="demo">
+<h1>以下按钮可控制ESP8266开发板引脚</h1>
+ <br>
+  <button type="button" onclick="sendData(1)">点亮 LED</button>
+  <button type="button" onclick="sendData(0)">关闭 LED</button><br>
+</div>
+
+<div>
+    LED引脚状态 : <span id="LEDState">NA</span><br>
+</div>
+<br><br>
+<div id="demo">
+<h1>以下为模拟输入引脚A0的实时读数</h1>
+<div>
+    A0引脚读数 : <span id="ADCValue">0</span><br>
+</div>
+<p>此页面用于演示如何通过网页控制LED引脚以及将A0引脚读数实时显示于网页中。</p>
+<p>本教程可在太极创客网站免费获取。太极创客网址： <a href="http://www.taichi-maker.com" target="_blank">www.taichi-maker.com</a></p>
+
+<script>
+function sendData(led) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("LEDState").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "setLED?LEDstate="+led, true);
+  xhttp.send();
+}
+ 
+setInterval(function() {
+  // Call a function repetatively with 2 Second interval
+  getData();
+}, 2000); //2000mSeconds update rate
+ 
+function getData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ADCValue").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "readADC", true);
+  xhttp.send();
+}
+</script>
+</center>
+</body>
+</html>
