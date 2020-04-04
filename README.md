@@ -19,31 +19,31 @@
 
 #### 代码目录:
  ```
-      ├─1-Init                            初始的代码
-      ├─2-Blink                           控制板载的LED灯闪烁
-      ├─3-AccessPoint-Wifi                开启Wifi接入点模式(开启热点)
-      ├─4-Connect-Wifi                    开启Wifi无线终端模式(连接路由器wifi)
-      ├─5-Connect-Wifi-Multi              开启Wifi无线终端模式(从多个中连接信号强的wifi)
-      ├─6-WebServer                       开启Web服务,监听80端口
-      ├─7-WebServer-Light                 开启Web服务,监听80端口,控制板载LED的亮灭
-      ├─8-WebServer-Pin-State             开启Web服务,监听80端口,查看D3引脚的状态
-      ├─9-WebServer-Pin-State-AutoRefresh 开启Web服务,监听80端口,查看D3引脚的状态,自动刷新
-      ├─10-Flash-Write                    向闪存中写入文本文件
-      ├─11-Flash-Read                     读取闪存中的文本文件
-      ├─12-Flash-Append                   向闪存文件中添加字符
-      ├─13-Flash-Folder-Read              读取闪存目录
-      ├─14-Flash-Remove                   删除闪存中的文件
-      ├─15-Flash-Info                     获取闪存信息
-      ├─16-SPIFFS-File-Server             上传网页web文件到闪存,并作为Web服务
-      ├─17-SPIFFS-File-Server-Pin         上传网页web文件到闪存,并作为Web服务控制引脚(板载LED亮灭)
-      ├─18-SPIFFS-File-Server-PWM         上传网页web文件到闪存,并通过Web页面传值控制引脚的PWM(板载LED的亮度)
-      ├─19-SPIFFS-File-Server-Value       上传网页web文件到闪存,并通过Web页面传多个值到ESP8266
-      ├─20-SPIFFS-File-Server-Pin-A0      上传网页web文件到闪存,并通过Web页面Ajax控制板载LED,获取A0引脚的读数
-      ├─21-SPIFFS-File-Server-PWM-View    上传网页web文件到闪存,并通过Jquery的视图控件控制引脚的PWM(板载LED的亮度)
-      ├─22-SPIFFS-File-Server-Analog-View 上传网页web文件到闪存,并通过Jquery的仪表盘视图控件显示引脚的输入数值
-      ├─23-SPIFFS-File-Server-Web-Upload  上传网页web文件到闪存,通过前端Web页面实现上传文件到闪存
-      ├─.gitignore                        .gitignore文件
-      └─README.md                         README.md文件
+      ├─01-Init                            初始的代码
+      ├─02-Blink                           控制板载的LED灯闪烁
+      ├─03-AccessPoint-Wifi                开启Wifi接入点模式(开启热点)
+      ├─04-Connect-Wifi                    开启Wifi无线终端模式(连接路由器wifi)
+      ├─05-Connect-Wifi-Multi              开启Wifi无线终端模式(从多个中连接信号强的wifi)
+      ├─06-WebServer                       开启Web服务,监听80端口
+      ├─07-WebServer-Light                 开启Web服务,监听80端口,控制板载LED的亮灭
+      ├─08-WebServer-Pin-State             开启Web服务,监听80端口,查看D3引脚的状态
+      ├─09-WebServer-Pin-State-AutoRefresh 开启Web服务,监听80端口,查看D3引脚的状态,自动刷新
+      ├─10-Flash-Write                     向闪存中写入文本文件
+      ├─11-Flash-Read                      读取闪存中的文本文件
+      ├─12-Flash-Append                    向闪存文件中添加字符
+      ├─13-Flash-Folder-Read               读取闪存目录
+      ├─14-Flash-Remove                    删除闪存中的文件
+      ├─15-Flash-Info                      获取闪存信息
+      ├─16-SPIFFS-File-Server              上传网页web文件到闪存,并作为Web服务
+      ├─17-SPIFFS-File-Server-Pin          上传网页web文件到闪存,并作为Web服务控制引脚(板载LED亮灭)
+      ├─18-SPIFFS-File-Server-PWM          上传网页web文件到闪存,并通过Web页面传值控制引脚的PWM(板载LED的亮度)
+      ├─19-SPIFFS-File-Server-Value        上传网页web文件到闪存,并通过Web页面传多个值到ESP8266
+      ├─20-SPIFFS-File-Server-Pin-A0       上传网页web文件到闪存,并通过Web页面Ajax控制板载LED,获取A0引脚的读数
+      ├─21-SPIFFS-File-Server-PWM-View     上传网页web文件到闪存,并通过Jquery的视图控件控制引脚的PWM(板载LED的亮度)
+      ├─22-SPIFFS-File-Server-Analog-View  上传网页web文件到闪存,并通过Jquery的仪表盘视图控件显示引脚的输入数值
+      ├─23-SPIFFS-File-Server-Web-Upload   上传网页web文件到闪存,通过前端Web页面实现上传文件到闪存
+      ├─.gitignore                         .gitignore文件
+      └─README.md                          README.md文件
  ```
 
 #### 提示
