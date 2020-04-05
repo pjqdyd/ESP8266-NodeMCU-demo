@@ -6,6 +6,8 @@
 >2.Micro-USB数据线<br>
 >3.CH341SER连接驱动<br>
 >4.Arduino IDE<br>
+>5.TFT 1.44寸液晶显示屏<br>
+>6.杜邦线若干<br>
 
 #### 开发准备:
  1. 电脑安装对应版本的CH341SER连接驱动(注意如果开发板是CP2102版本,就安装cp210x_VCP驱动)
@@ -42,6 +44,7 @@
       ├─21-SPIFFS-File-Server-PWM-View     上传网页web文件到闪存,并通过Jquery的视图控件控制引脚的PWM(板载LED的亮度)
       ├─22-SPIFFS-File-Server-Analog-View  上传网页web文件到闪存,并通过Jquery的仪表盘视图控件显示引脚的输入数值
       ├─23-SPIFFS-File-Server-Web-Upload   上传网页web文件到闪存,通过前端Web页面实现上传文件到闪存
+      ├─24-TFT-1.44inch-Display            1.44寸TFT液晶显示屏的使用
       ├─.gitignore                         .gitignore文件
       └─README.md                          README.md文件
  ```
