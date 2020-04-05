@@ -10,7 +10,7 @@
 >6.杜邦线若干<br>
 
 #### 开发准备:
- 1. 电脑安装对应版本的CH341SER连接驱动(注意如果开发板是CP2102版本,就安装cp210x_VCP驱动)
+ 1. 电脑安装对应版本的[CH341SER](https://github.com/juliagoda/CH341SER)连接驱动(注意如果开发板是CP2102版本,就安装cp210x_VCP驱动)
  2. 配置Arduino IDE: 文件>首选项>附件开发板网址(填写:http://arduino.esp8266.com/stable/package_esp8266com_index.json)
  3. 配置Arduino IDE的ESP8266插件: 工具>开发板>开发板管理器..>搜索ESP8266>安装esp8266 2.6.3
  开发板插件包
