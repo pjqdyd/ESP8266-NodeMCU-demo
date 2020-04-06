@@ -2,12 +2,13 @@
 
 #### 开发工具:
 
->1.ESP8266-NodeMCU-Lua-V3开发板<br>
->2.Micro-USB数据线<br>
->3.CH341SER连接驱动<br>
->4.Arduino IDE<br>
+>1.CH341SER连接驱动<br>
+>2.Arduino IDE<br>
+>3.ESP8266-NodeMCU-Lua-V3开发板<br>
+>4.Micro-USB数据线<br>
 >5.TFT 1.44寸液晶显示屏<br>
->6.杜邦线若干<br>
+>6.DHT11 温湿度传感器<br>
+>7.杜邦线若干<br>
 
 #### 开发准备:
  1. 电脑安装对应版本的[CH341SER](https://github.com/juliagoda/CH341SER)连接驱动(注意如果开发板是CP2102版本,就安装cp210x_VCP驱动)
