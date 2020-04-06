@@ -45,6 +45,7 @@
       ├─22-SPIFFS-File-Server-Analog-View  上传网页web文件到闪存,并通过Jquery的仪表盘视图控件显示引脚的输入数值
       ├─23-SPIFFS-File-Server-Web-Upload   上传网页web文件到闪存,通过前端Web页面实现上传文件到闪存
       ├─24-TFT-1.44inch-Display            1.44寸TFT液晶显示屏的使用
+      ├─25-DHT11                           DHT11温湿度传感器的使用
       ├─.gitignore                         .gitignore文件
       └─README.md                          README.md文件
  ```
