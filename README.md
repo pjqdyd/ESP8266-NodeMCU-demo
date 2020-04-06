@@ -54,6 +54,8 @@
 #### 提示
 1. Arduino IDE开启串口监视器可以查看输出打印日志.
 2. 通过Arduino IDE向ESP8266闪存中存入任意文件,需要安装[Arduino-ESP8266FS-Plugin插件](https://github.com/esp8266/arduino-esp8266fs-plugin)
-   安装插件后重启IDE,在工具>ESP8266 Sketch Data Upload会将当前打开文件的同级data文件夹上传
+   安装插件后重启IDE,在工具>ESP8266 Sketch Data Upload会将当前打开文件的同级data文件夹上传.
+3. Arduino IDE安装库文件可以通过项目>加载库>管理库>进行搜索安装, 也可以直接将库文件复制到
+   文件>首选项>项目文件夹位置/libiaries目录下
 
- (参考: [太极创客文档](http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/))
+ (参考: [文档](http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/))
