@@ -49,6 +49,8 @@
       ├─24-TFT-1.44inch-Display            1.44寸TFT液晶显示屏的使用
       ├─25-DHT11                           DHT11温湿度传感器的使用
       ├─26-HX711-5KG                       HX711压力称重传感器的使用(5KG)
+      ├─27-HC-SR04                         HC-SR04超声波测距传感器的使用
+      ├─28-ESP8266-Sensors                 ESP8266同时整合连接1.44TFT, DHT11, HX711, HC-SR04
       ├─.gitignore                         .gitignore文件
       └─README.md                          README.md文件
  ```
@@ -60,4 +62,4 @@
 3. Arduino IDE安装库文件可以通过项目>加载库>管理库>进行搜索安装, 也可以直接将库文件复制到
    文件>首选项>项目文件夹位置/libiaries目录下.
 
- (参考: [文档](http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/))
+ (基础参考: [文档](http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/))
