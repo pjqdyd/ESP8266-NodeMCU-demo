@@ -9,16 +9,17 @@ float distance; //距离
 const int DHT11_PIN = D0; //接D0 GPIO16
 byte temperature = 0; //温度
 byte humidity = 0;    //湿度
+String thStr = "null"; //温湿度字符串
 SimpleDHT11 dht11(DHT11_PIN);
 
 //**************HX711压力称重**********************************
 #include "HX711.h"
-#define GapValue 610       ///该值需校准 每个称重传感器都有所不同
+#define GapValue 610      //该值需校准 每个称重传感器都有所不同
 const int LOADCELL_DOUT_PIN = 1; //TX GPIO1
 const int LOADCELL_SCK_PIN = D6; //D6 GPIO12
 float weight = 0;
-long HX711_Buffer = 0;
 long weight_maopi = 0, weight_shiwu = 0; //毛皮, 四舍五入的重量
+long readingHx711 = 0; //传感器读取的值
 HX711 scale;
 
 //******************1.44寸TFT显示屏****************************
@@ -50,48 +51,44 @@ void setup() {
 void loop() {
   tft.fillScreen(ST7735_BLACK); //刷屏, 重新显示
   
-  tft.setCursor(20,10);         //设置光标的位置
-  tft.setTextSize(1);
-  tft.setTextColor(ST7735_RED);
-  tft.print("num: ");           //显示屏显示自增数字
-  tft.print(i);
+  printToTFT(20, 10, 1, ST7735_RED, "num: "+String(i)); //打印显示自增数字
   i++;
   delay(500);
 
   distance = getDistance();
-  tft.setCursor(20,20);         //设置光标的位置
-  tft.setTextSize(1);
-  tft.print("Distance: ");      //显示屏显示超声波距离
-  tft.print(distance);
-  tft.print("cm");               //单位cm
+  printToTFT(20, 20, 1, ST7735_RED, "Distance: "+String(distance)+"cm"); //打印显示距离
   delay(500);
   
   weight = getWeight();  //获取在传感器上的重物重量
   float result = float(weight/1000); //转换成KG
-  tft.setCursor(20,30);         //设置光标的位置
-  tft.setTextSize(1);
-  tft.print("Weight: ");        //显示屏显示重量
-  tft.print(result,3);
-  tft.print("kg");             //单位kg
+  printToTFT(20, 30, 1, ST7735_RED, "Weight: "+String(result,3)+"kg"); //打印显示重量
   delay(500);  //延时500ms
 
-  tft.setCursor(20,40);         //设置光标的位置
-  tft.setTextSize(1);
-  tft.print("T-H: ");        //显示屏显示温度和湿度
-  tft.print(getTemperatureAndHumidity());
-  delay(500);  //延时500ms
+  printToTFT(20, 40, 1, ST7735_RED, "T-H: "+getTemperatureAndHumidity()); //打印显示温湿度
+  delay(1000);  //延时1000ms
+}
+
+void printToTFT(int x, int y, int textSize, uint16_t color, String text){ //打印到TTF显示屏的函数
+  tft.setCursor(x, y);         //设置光标的位置
+  tft.setTextSize(textSize);   //文字大小
+  tft.setTextColor(color);     //文字颜色
+  tft.print(text);             //打印要显示的内容
 }
 
 long getWeight(){ //称重函数, 获取重量
- weight_shiwu = getReadingByHX711() - weight_maopi;
+ readingHx711 = getReadingByHX711(); //获取HX711称重传感器的输入AD值
+ if(readingHx711 == 0){ //表明未成功读取到值
+  return weight_shiwu;  //返回上次成功读取的值
+ }
+ weight_shiwu = readingHx711 - weight_maopi;
  weight_shiwu = (long)((float)weight_shiwu/GapValue); //AD值转换为重量（g）
  return weight_shiwu; 
 }
 long getReadingByHX711(){ //读取HX711称重传感器的输入AD值
   int waitTime = 0;
   while(!scale.is_ready()){ //如果称重传感器没有准备成功
-    delay(50); waitTime+=100; //等待100ms再重新获取
-    if(waitTime > 3000 ){ //如果超过3秒未获取到, 返回0, 避免阻塞
+    delay(50); waitTime+=50; //等待50ms再重新获取
+    if(waitTime > 2000 ){ //如果超过2秒未获取到, 返回0, 避免阻塞
       return 0;
     }
   }
@@ -110,14 +107,13 @@ float getDistance(){ //获取CH-SR04超声波的距离
  }
 
  String getTemperatureAndHumidity(){ //获取DHT11的温度和湿度
-  byte temperature = 0;
-  byte humidity = 0;
   int waitTime = 0;
   while(dht11.read(&temperature, &humidity, NULL) != SimpleDHTErrSuccess){ //如果读取失败
       delay(100); waitTime+=100; //等待100ms再重新读取
-      if(waitTime > 3000 ){ //如果超过3秒未获取到, 返回空, 避免阻塞
-      return "null";
+      if(waitTime > 2000 ){ //如果超过2秒未获取到
+      return thStr; //返回上次成功的读数值, 避免阻塞
     }
   }
-  return String((int)temperature) + "*c " + String((int)humidity) + "H";
+  thStr = String((int)temperature) + "*c " + String((int)humidity) + "H";
+  return thStr;
  }
