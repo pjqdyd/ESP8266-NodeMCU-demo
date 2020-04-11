@@ -15,8 +15,8 @@ SimpleDHT11 dht11(DHT11_PIN);
 //**************HX711压力称重**********************************
 #include "HX711.h"
 #define GapValue 610      //该值需校准 每个称重传感器都有所不同
-const int LOADCELL_DOUT_PIN = 1; //TX GPIO1
-const int LOADCELL_SCK_PIN = D6; //D6 GPIO12
+const int LOADCELL_DOUT_PIN = D4; // D4 GPIO2
+const int LOADCELL_SCK_PIN = 3; // RX GPIO3
 float weight = 0;
 long weight_maopi = 0, weight_shiwu = 0; //毛皮, 四舍五入的重量
 long readingHx711 = 0; //传感器读取的值
@@ -56,7 +56,7 @@ void loop() {
   delay(500);
 
   distance = getDistance();
-  printToTFT(20, 20, 1, ST7735_RED, "Distance: "+String(distance)+"cm"); //打印显示距离
+  printToTFT(20, 20, 1, ST7735_RED, "Distance: "+String(distance,1)+"cm"); //打印显示距离
   delay(500);
   
   weight = getWeight();  //获取在传感器上的重物重量
