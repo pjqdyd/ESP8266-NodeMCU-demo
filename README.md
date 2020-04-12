@@ -53,7 +53,7 @@
       ├─27-HC-SR04                         HC-SR04超声波测距传感器的使用
       ├─28-ESP8266-Sensors                 ESP8266同时整合连接1.44TFT, DHT11, HX711, HC-SR04
       ├─29-ESP8266-MQTT                    ESP8266使用MQTT通信
-      ├─30-ESP8266-ArdinoJson              ESP8266序列和反序列JSON格式
+      ├─30-ESP8266-ArduinoJson             ESP8266序列和反序列JSON格式
       ├─.gitignore                         .gitignore文件
       └─README.md                          README.md文件
  ```
