@@ -54,6 +54,7 @@
       ├─28-ESP8266-Sensors                 ESP8266同时整合连接1.44TFT, DHT11, HX711, HC-SR04
       ├─29-ESP8266-MQTT                    ESP8266使用MQTT通信
       ├─30-ESP8266-ArduinoJson             ESP8266序列和反序列JSON格式
+      ├─31-WebClient-Http                  作为客户端发送Http请求
       ├─.gitignore                         .gitignore文件
       └─README.md                          README.md文件
  ```
